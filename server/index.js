@@ -6,10 +6,8 @@ const app = express();
 app.use(express.json());
 
 // Test Route
-app.get("/api/test", (req, res) => {
-  res.json({ message: "Skill Swap API is running 🚀" });
-});
-
+const testRoutes=require("./routes/testRoutes")
+app.use("/api", testRoutes);
 // Server Listener
 const PORT = 40000;
 
